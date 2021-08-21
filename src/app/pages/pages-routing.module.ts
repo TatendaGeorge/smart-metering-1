@@ -31,6 +31,10 @@ const routes: Routes = [
         loadChildren: () => import('./properties/properties.module').then(m => m.PropertiesModule)
       },
       {
+        path: 'smart-meters',
+        loadChildren: () => import('./smart-meters/smart-meters.module').then(m => m.SmartMetersModule)
+      },
+      {
         path: 'reports',
         loadChildren: () => import('./reports/reports.module').then(m => m.ReportsModule)
       },

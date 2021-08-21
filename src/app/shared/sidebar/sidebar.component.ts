@@ -7,59 +7,62 @@ import * as $ from 'jquery';
 
 
 @Component({
-    selector: 'app-sidebar',
-    templateUrl: './sidebar.component.html',
+  selector: 'app-sidebar',
+  templateUrl: './sidebar.component.html',
 })
 
 export class SidebarComponent implements OnInit {
-    
-    public menuItems: any[];
 
-  
-    constructor( public sidebarservice: SidebarService,private router: Router) {
+  public menuItems: any[];
 
-        router.events.subscribe( (event: Event) => {
 
-            if (event instanceof NavigationStart) {
-                // Show loading indicator
-            }
+  constructor(public sidebarservice: SidebarService, private router: Router) {
 
-            if (event instanceof NavigationEnd && $(window).width() < 1025 && ( document.readyState == 'complete' || false ) ) {
+    router.events.subscribe((event: Event) => {
 
-                this.toggleSidebar();
-                // Hide loading indicator
-               
-            }
+      if (event instanceof NavigationStart) {
+        // Show loading indicator
+      }
 
-            if (event instanceof NavigationError) {
-                // Hide loading indicator
+      if (event instanceof NavigationEnd && $(window).width() < 1025 && (document.readyState == 'complete' || false)) {
 
-                // Present error to user
-                console.log(event.error);
-            }
-        });
+        this.toggleSidebar();
+        // Hide loading indicator
 
-    }
+      }
 
-        
-    toggleSidebar() {
-        this.sidebarservice.setSidebarState(!this.sidebarservice.getSidebarState());
+      if (event instanceof NavigationError) {
+        // Hide loading indicator
 
-    }
+        // Present error to user
+        console.log(event.error);
+      }
+    });
 
-    getSideBarState() {
-        return this.sidebarservice.getSidebarState();
-    }
+  }
 
-    hideSidebar() {
-        this.sidebarservice.setSidebarState(true);
-    }
-    
 
-    ngOnInit() {
-        this.menuItems = ROUTES.filter(menuItem => menuItem);
-        $.getScript('./assets/js/app-sidebar.js');
+  toggleSidebar() {
+    this.sidebarservice.setSidebarState(!this.sidebarservice.getSidebarState());
 
-    }
+  }
 
+  getSideBarState() {
+    return this.sidebarservice.getSidebarState();
+  }
+
+  hideSidebar() {
+    this.sidebarservice.setSidebarState(true);
+  }
+
+
+  ngOnInit() {
+    this.menuItems = ROUTES.filter(menuItem => menuItem);
+    $.getScript('./assets/js/app-sidebar.js');
+
+  }
+
+  get activeRoute(): string {
+    return this.router.url.split('/')[1]
+  }
 }

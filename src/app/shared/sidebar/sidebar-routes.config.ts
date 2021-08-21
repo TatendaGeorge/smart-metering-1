@@ -12,7 +12,10 @@ export const ROUTES: RouteInfo[] = [
     path: 'suppliers', title: 'Suppliers', icon: 'zmdi zmdi-group-work', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
   },
   {
-    path: 'properties', title: 'Properties', icon: 'zmdi zmdi-balance', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+    path: 'properties', title: 'Properties', icon: 'zmdi zmdi-city-alt', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+  },
+  {
+    path: 'smart-meters', title: 'Smart Meters', icon: 'zmdi zmdi-remote-control', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
   },
   {
     path: 'reports', title: 'Reports', icon: 'zmdi zmdi-chart', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []

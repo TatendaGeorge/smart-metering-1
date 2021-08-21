@@ -9,10 +9,13 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { FooterComponent } from "./footer/footer.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { SidebarComponent } from "./sidebar/sidebar.component";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const exports = [
   NgbModule,
-  NgxDatatableModule
+  NgxDatatableModule,
+  FormsModule,
+  ReactiveFormsModule
 ];
 
 @NgModule({

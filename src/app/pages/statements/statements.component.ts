@@ -24,7 +24,7 @@ export class StatementsComponent implements OnInit {
       { name: 'Amount' },
       { name: 'Status' },
       { name: 'Actions' },
-    ]
+    ];
   }
 
   initData() {

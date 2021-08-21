@@ -41,13 +41,14 @@
           <ng-container *ngFor='let column of columns'>
             <ngx-datatable-column *ngIf='column.name === "Actions"' name="Actions" prop="actions">
               <ng-template let-value="value" let-row="row" ngx-datatable-cell-template>
-                <a href="javascript: void(0);"><i class="fa fa-eye font-size-18 text-primary"></i></a>
+                <a href="javascript: void(0);" [routerLink]="['/statements','36598210-e7d3-40ed-b3d1-4c954927e0f2' ]"
+                  routerLinkActive="active"><i class="fa fa-eye font-size-18 text-primary"></i></a>
               </ng-template>
             </ngx-datatable-column>
 
             <ngx-datatable-column *ngIf='column.name === "Date"' name="{{column.name}}" prop="{{column.prop}}">
               <ng-template let-value="value" let-row="row" ngx-datatable-cell-template>
-                {{value | date: 'short'}}
+                {{value | date: 'dd/MM/yyyy'}}
               </ng-template>
             </ngx-datatable-column>
 

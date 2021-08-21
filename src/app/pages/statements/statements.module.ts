@@ -3,6 +3,7 @@ import { StatementsRoutingModule } from './statements-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StatementsComponent } from './statements.component';
+import { StatementDetailComponent } from './statement-detail/statement-detail.component';
 
 @NgModule({
   imports: [
@@ -10,6 +11,8 @@ import { StatementsComponent } from './statements.component';
     StatementsRoutingModule,
     SharedModule
   ],
-  declarations: [StatementsComponent]
+  declarations: [
+    StatementsComponent,
+    StatementDetailComponent]
 })
 export class StatementsModule { }
