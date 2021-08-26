@@ -15,8 +15,7 @@ export class SidebarComponent implements OnInit {
 
   public menuItems: any[];
 
-
-  constructor(public sidebarservice: SidebarService, private router: Router) {
+  constructor(public sidebarService: SidebarService, private router: Router) {
 
     router.events.subscribe((event: Event) => {
 
@@ -43,16 +42,16 @@ export class SidebarComponent implements OnInit {
 
 
   toggleSidebar() {
-    this.sidebarservice.setSidebarState(!this.sidebarservice.getSidebarState());
+    this.sidebarService.setSidebarState(!this.sidebarService.getSidebarState());
 
   }
 
   getSideBarState() {
-    return this.sidebarservice.getSidebarState();
+    return this.sidebarService.getSidebarState();
   }
 
   hideSidebar() {
-    this.sidebarservice.setSidebarState(true);
+    this.sidebarService.setSidebarState(true);
   }
 
 
